@@ -1,0 +1,35 @@
+<ngx-spinner></ngx-spinner>
+
+<div id="logreg-forms">
+    <div class="form-signin">
+        <h1 class="h3 mb-3 font-weight-normal" style="text-align: center;">
+            <img class="brand-logo" src="assets/imgs/logo.png" alt="Logo" />
+        </h1>
+
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" #userEmail required />
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" #userPwd required />
+        <p>
+            <br />
+            <button class="btn btn-success btn-block" type="button" (click)="authService.SignUp(userEmail.value, userPwd.value)">
+        <i class="fas fa-sign-in-alt"></i> Sign Up
+      </button>
+        </p>
+
+        <p style="text-align: center;">OR</p>
+
+        <div align="center" class="social-login">
+            <button class="btn google-btn social-btn" type="button" (click)="authService.GoogleAuth()">
+        <span><i class="fab fa-google-plus-g"></i> Sign in with Google+</span>
+      </button>
+        </div>
+        <hr />
+
+        <!-- <p>Already have an account!</p>  -->
+        <div align="center">
+            <a href="#" class="redirect" routerLink="/login">Already have an account? Log In</a
+      >
+    </div>
+  </div>
+
+  <br />
+</div>

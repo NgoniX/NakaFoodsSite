@@ -1,0 +1,41 @@
+<ngx-spinner></ngx-spinner>
+
+<div id="logreg-forms">
+    <div class="form-signin">
+        <h1 class="h3 mb-3 font-weight-normal" style="text-align: center;">
+            <img class="brand-logo" src="assets/imgs/logo.png" alt="Logo" />
+        </h1>
+
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" #userName required />
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" #userPassword required />
+        <p>
+            <br />
+            <button class="btn btn-success btn-block" type="button" (click)="authService.SignIn(userName.value, userPassword.value)">
+        <i class="fa fa-sign-in-alt"></i> Sign in
+      </button>
+        </p>
+
+        <p style="text-align: center;">OR</p>
+
+        <div align="center" class="social-login">
+            <button class="btn google-btn social-btn" type="button" (click)="authService.GoogleAuth()">
+        <span><i class="fa fa-google-plus-g"></i> Sign in with Google+</span>
+      </button>
+        </div>
+
+        <a href="#" id="forgot_pswd" routerLink="/forgot-password">Forgot password?</a
+    >
+    <hr />
+    <!-- <p>Don't have an account!</p>  -->
+    <button
+      class="btn btn-primary btn-block"
+      type="button"
+      id="btn-signup"
+      routerLink="/register"
+    >
+      <i class="fa fa-user-plus"></i> Sign up New Account
+    </button>
+  </div>
+
+  <br />
+</div>

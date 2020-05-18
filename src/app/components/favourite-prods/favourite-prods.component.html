@@ -1,0 +1,72 @@
+<div class="container" *ngIf="favouriteProducts.length > 0">
+    <div class="row">
+        <!-- List of Products -->
+        <div class="col-sm-4" *ngFor="let product of favouriteProducts">
+            <div class="item">
+                <div class="mb-r">
+                    <!--Card-->
+                    <div class="card card-cascade wider">
+                        <!--Card image-->
+                        <a [routerLink]="['/prod-desc', product.$key]">
+                            <div class="view overlay hm-white-slight">
+                                <img [src]="product.thumb" class="img-fluid" alt="" width="360px" />
+                                <a>
+                                    <div class="mask waves-effect waves-light" mdbRippleRadius></div>
+                                </a>
+                            </div>
+                        </a>
+
+                        <!--/.Card image-->
+
+                        <!--Card content-->
+                        <div class="card-body text-center no-padding">
+                            <!--Category & Title-->
+                            <h5 class="card-title">
+                                <strong>
+                  <a [routerLink]="['/prod-desc', product.$key]">{{
+                    product.name
+                  }}</a>
+                </strong>
+                            </h5>
+                            <a class="text-muted">
+                                <p class="badge red mr-1">{{ product.category }}</p>
+                            </a>
+
+                            <!--Description-->
+                            <p class="card-text">{{ product.description }}</p>
+
+                            <!--Card footer-->
+                            <div class="card-footer">
+                                <span class="left">$ {{ product.sale_price }}</span>
+                                <span class="right">
+                  <a
+                    placement="top"
+                    mdbTooltip="Quick Look"
+                    container="body"
+                    [routerLink]="['/prod-desc', product.$key]"
+                  >
+                    <i class="fa fa-eye"></i>
+                  </a>
+                  <a
+                    placement="top"
+                    mdbTooltip="Remove Product"
+                    container="body"
+                    (click)="removeFavourite(product)"
+                  >
+                    <i class="fa fa-trash"></i>
+                  </a>
+                </span>
+                            </div>
+                        </div>
+                        <!--/.Card content-->
+                    </div>
+                    <!--/.Card-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" *ngIf="favouriteProducts.length === 0">
+    <app-no-products-found [title]="messageTitle" [description]="messageDescription"></app-no-products-found>
+</div>

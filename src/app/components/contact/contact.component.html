@@ -1,0 +1,27 @@
+<ngx-spinner></ngx-spinner>
+
+<main class="pt-4">
+    <div class="container wow fadeIn">
+        <!-- Default form contact -->
+        <form class="text-center border border-light p-5" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <p class="h4 mb-4">Send us feedback</p>
+
+            <!-- Name -->
+            <input type="text" formControlName="name" id="name" class="form-control mb-4" placeholder="Name" />
+
+            <!-- Email -->
+            <input type="email" formControlName="email" id="email" class="form-control mb-4" placeholder="E-mail" />
+
+            <!-- Message -->
+            <div class="form-group">
+                <textarea formControlName="message" class="form-control rounded-0" id="message" rows="3" placeholder="Message"></textarea>
+            </div>
+
+            <!-- Send button -->
+            <button class="btn primary-c btn-lg btn-block" type="submit" [disabled]="disabledSubmitButton">
+        Send <i class="fa fa-envelope"></i>
+      </button>
+        </form>
+        <!-- Default form contact -->
+    </div>
+</main>

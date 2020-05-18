@@ -1,0 +1,54 @@
+<div class="sticky-top">
+    <!-- Card -->
+    <div class="mb-3">
+        <div class="pt-4">
+
+            <h3>No. of items in cart <span class="badge red z-depth-1 mr-1">{{products.length}}</span></h3>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                    Subtotal
+                    <span>${{totalValue | number : '1.2-2'}}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                    Shipping &amp; Handling
+                    <span>$10.00</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                    <div>
+                        <strong>The total amount</strong>
+                        <strong>
+    <p class="mb-0">(including VAT)</p>
+  </strong>
+                    </div>
+                    <span><strong>${{grandTotal | number : '1.2-2'}}</strong></span>
+                </li>
+            </ul>
+
+            <a class="btn" [routerLink]="['/home']">Continue Shopping</a>
+            <a class="btn primary-c" [routerLink]="['/checkouts']">Checkout</a>
+
+        </div>
+    </div>
+    <!-- Card -->
+
+    <!-- Card -->
+    <div class="mb-3">
+        <div class="pt-4">
+
+            <a class="dark-grey-text d-flex justify-content-between" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+Add a discount code (optional)
+<span><i class="fa fa-chevron-down pt-1"></i></span>
+</a>
+
+            <div class="collapse" id="collapseExample">
+                <div class="mt-3">
+                    <div class="md-form md-outline mb-0">
+                        <input type="text" id="discount-code" class="form-control font-weight-light" placeholder="Enter discount code">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Card -->
+</div>

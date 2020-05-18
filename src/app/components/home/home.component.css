@@ -1,0 +1,45 @@
+.carousel {
+    height: 100%;
+}
+
+.carousel img {
+    width: 60%;
+    height: 60%;
+    display: block;
+    margin: 100px auto;
+    object-fit: scale-down;
+}
+
+.main-content {
+    padding-top: 535px;
+}
+
+.card img {
+    width: 150px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: scale-down;
+}
+
+.my-pagination /deep/ .ngx-pagination .current {
+    background: #d8232a;
+}
+
+@media (max-width: 740px) {
+    html,
+    body,
+    header,
+    .carousel {
+        height: 100%;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 850px) {
+    html,
+    body,
+    header,
+    .carousel {
+        height: 100%;
+    }
+}

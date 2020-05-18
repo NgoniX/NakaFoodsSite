@@ -1,0 +1,71 @@
+<!-- Navbar -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+    <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand waves-effect" target="_blank">
+            <img src="assets/imgs/logo.png" alt="logo" />
+        </a>
+
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Left -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link waves-effect" routerLink="/home">Home
+            <span class="sr-only">(current)</span>
+          </a>
+                </li>
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link waves-effect" routerLink="/naka-services">Naka Services</a
+          >
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link waves-effect" routerLink="/about">About Us</a>
+                </li>
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link waves-effect" routerLink="/contact">Contact Us</a>
+                </li>
+            </ul>
+
+            <!-- Right -->
+            <ul class="navbar-nav nav-flex-icons">
+                <li class="nav-item">
+                    <a [routerLink]="['/cart-items']" class="nav-link waves-effect">
+                        <span class="badge red z-depth-1 mr-1">
+              {{ cartService.navbarCartCount }}
+            </span>
+                        <i class="fa fa-shopping-cart fa-fw"></i>
+                        <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLink]="['/favourites']" class="nav-link waves-effect">
+                        <span class="badge red z-depth-1 mr-1">
+              {{ favouriteService.navbarFavProdCount }}
+            </span>
+                        <i class="fa fa-heart fa-fw"></i>
+                    </a>
+                </li>
+                <li class="nav-item" *ngIf="!isLoggedIn$; else elseBlock">
+                    <a routerLink="/login" class="nav-link border border-light rounded waves-effect">
+                        <i class="fa fa-sign-in mr-2"></i>Login/Register
+                    </a>
+                </li>
+
+                <ng-template #elseBlock>
+                    <li class="nav-item">
+                        <a (click)="authService.SignOut()" class="nav-link border border-light rounded waves-effect">
+                            <i class="fa fa-sign-out mr-2"></i>Logout
+                        </a>
+                    </li>
+                </ng-template>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Navbar -->
