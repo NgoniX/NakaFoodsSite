@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "NakaFoods": {
+        "NakaFactory": {
             "projectType": "application",
             "schematics": {},
             "root": "",
@@ -43,7 +43,6 @@
                             }],
                             "optimization": true,
                             "outputHashing": "all",
-                            "sourceMap": false,
                             "extractCss": true,
                             "namedChunks": false,
                             "extractLicenses": true,
